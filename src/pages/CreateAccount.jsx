@@ -23,7 +23,7 @@ const CreateAccount = () => {
             <input
               type="text"
               id="email"
-              placeholder="platzi@example.com"
+              placeholder="email@example.com"
               className="input input-email"
             />
             <label for="password" className="label">
