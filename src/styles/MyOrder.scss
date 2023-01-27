@@ -5,11 +5,17 @@
 	padding: 24px;
 	box-sizing: border-box;
 	position: absolute;
-	right: 0;
+	right: -343px;
 	background-color: white;
 	top: 60px;
 	border: 1px solid var(--very-light-pink);
 	height: auto;
+	transition: 1s ease;
+	animation: swipeLeft 1s ease forwards;
+}
+@keyframes swipeLeft {
+	100% {transform: translateX(-360px);}
+
 }
 .title-container {
 	display: flex;

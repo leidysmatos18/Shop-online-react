@@ -5,7 +5,14 @@ nav {
   justify-content: space-between;
   padding: 0 24px;
   border-bottom: 1px solid var(--very-light-pink);
+  background-color: white;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100vw;
+  box-sizing: border-box;
 }
+
 .menu {
   display: none;
 }
