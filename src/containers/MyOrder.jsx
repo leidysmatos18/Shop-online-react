@@ -3,8 +3,9 @@ import OrderItem from "../components/OrderItem";
 import "../styles/MyOrder.scss";
 import AppContext from "../context/AppContext";
 
-const MyOrder = () => {
+const MyOrder = ({ setToggleOrders, toggleOrders }) => {
   const { state } = useContext(AppContext);
+
   const sumTotalPrice = () => {
     const reducer = (acumulador, currentValue) =>
       acumulador + currentValue.price;
@@ -17,13 +18,19 @@ const MyOrder = () => {
   return (
     <aside className="MyOrder">
       <div className="title-container">
-        <img src="./icons/flechita.svg" alt="arrow" />
+        <img
+          src="./icons/flechita.svg"
+          alt="arrow"
+          onClick={() => setToggleOrders(!toggleOrders)}
+        />
         <p className="title">My order</p>
       </div>
       <div className="my-order-content">
-        {state.cart.map((product) => (
-          <OrderItem product={product} key={`item-order${product.id}`} />
-        ))}
+        <div className="container-order-product">
+          {state.cart.map((product) => (
+            <OrderItem product={product} key={`item-order${product.id}`} />
+          ))}
+        </div>
 
         <div className="order">
           <p>

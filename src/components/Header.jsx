@@ -55,7 +55,12 @@ const Header = () => {
           </li>
         </ul>
         {toggle ? <Menu /> : null}
-        {toggleOrders ? <MyOrder /> : null}
+        {toggleOrders ? (
+          <MyOrder
+            toggleOrders={toggleOrders}
+            setToggleOrders={setToggleOrders}
+          />
+        ) : null}
       </div>
     </nav>
   );
